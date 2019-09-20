@@ -5,35 +5,21 @@ import Foundation
 class Katie {
     //static properties
     private static let players = Katie.numberOfPlayers()
-    private static let peopleArray = Katie.populate()
-    public static var pairs = genPairs()
+    private static let availablePlayers = Katie.populate()
+    public var pairs = genPairs()
     //functions
-    // print all the peole with their interests
+    // everyone introduce themselves
      public func introduction() {
-        
-        for people in Katie.peopleArray {
+        for people in Katie.availablePlayers {
             print(people.tellStory())
-            var i = 0
-        
-            for inter in people.interests { // could use a switch case method instead
-            
-                if people.interests.count == 1 { // check if there is only 1 interest
-                    print("I am interested in \(inter.name), \(inter.description2) \n")
-                } else if i != people.interests.count - 1 { //check if it not the last ineterest
-                    print("I am interested in \(inter.name), \(inter.description2)")
-                } else {
-                    print("And lastly I am interested in \(inter.name), \(inter.description2) \n")
-                  }
-                i += 1
-            }
         }
     }
     // generate pairs func
     static func genPairs() -> [String] {
         var m = 0
         var n = 0
-        var peeps = Katie.peopleArray // create referemce to the peoples array
-        var peeps2 = Katie.peopleArray // create a second reference to the peoples array
+        var peeps = Katie.availablePlayers // create referemce to the peoples array
+        var peeps2 = Katie.availablePlayers // create a second reference to the peoples array
         var inPairs = [String]()
         
         for i in peeps { // itirate through all people
@@ -59,6 +45,22 @@ class Katie {
         }
     return inPairs
    }
+    
+    
+  public func tellInterests() {
+        var allPeeps = Katie.availablePlayers
+        while allPeeps.count > 0 {
+            let randPeepsIndex = Int(arc4random_uniform(UInt32(allPeeps.count)))
+            if allPeeps[randPeepsIndex].interests.count == 0 {
+                allPeeps.remove(at: randPeepsIndex)
+            } else {
+                let randIntIndex = Int(arc4random_uniform(UInt32(allPeeps[randPeepsIndex].interests.count)))
+                print("my name is \(allPeeps[randPeepsIndex].name) and I am interested in \(allPeeps[randPeepsIndex].interests[randIntIndex].name). \(allPeeps[randPeepsIndex].interests[randIntIndex].description2)")
+                allPeeps[randPeepsIndex].interests.remove(at: randIntIndex)
+            }
+        }
+        
+    }
     
     //static functions
     //populate the data container with people
@@ -88,7 +90,7 @@ class Katie {
 
 
 //people class
-    public class People {
+public class People {
     
     // static properties
     public static let allPeople = People.generatePeople()
@@ -106,9 +108,7 @@ class Katie {
         self.homeTown = homeTown
         self.interests = interests
     }
-    
-    //functions
-    
+        
     //static functions
     public static func generatePeople() -> [People] {
         
@@ -276,8 +276,10 @@ public class Interests {
 }
 
 let katie = Katie()
+var allPairs = katie.pairs
 katie.introduction()
-print("THERE ARE A TOTAL OF \(Katie.pairs.count) POTENTIAL PAIRS!")
-for i in Katie.pairs {
+katie.tellInterests()
+print("THERE ARE A TOTAL OF \(allPairs.count) POTENTIAL PAIRS!")
+for i in allPairs {
     print(i)
 }
