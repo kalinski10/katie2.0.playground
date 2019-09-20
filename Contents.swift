@@ -2,7 +2,7 @@ import UIKit
 import Foundation
 
 //katie class
-class Katie {
+public class Katie {
     //static properties
     private static let players = Katie.numberOfPlayers()
     private static let availablePlayers = Katie.populate()
