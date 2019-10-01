@@ -31,8 +31,18 @@ public class People {
         let becky = People(name: "Becky", age: 58, homeTown: "Sunderland", interests: Interests.generateInt())
         let reece = People(name: "Reece", age: 65, homeTown: "Cardiff", interests: Interests.generateInt())
         let alex = People(name: "Alex", age: 12, homeTown: "Bournemoth", interests: Interests.generateInt())
-        options.append(rob); options.append(kalin); options.append(james); options.append(jaidan); options.append(mary); options.append(amber);
-        options.append(delicia); options.append(zenon); options.append(keisha); options.append(becky); options.append(reece); options.append(alex)
+        options.append(rob);
+        options.append(kalin);
+        options.append(james);
+        options.append(jaidan);
+        options.append(mary);
+        options.append(amber);
+        options.append(delicia);
+        options.append(zenon);
+        options.append(keisha);
+        options.append(becky);
+        options.append(reece);
+        options.append(alex)
         return options
     }
     public func tellStory() -> String {
