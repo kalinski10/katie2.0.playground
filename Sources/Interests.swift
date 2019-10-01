@@ -39,11 +39,31 @@ public class Interests {
         let magic = Interests(name: "Magic", description2: "Magic tricks are mainly slight of hand but you need to be a showman to get people really excited.")
         let boxing = Interests(name: "Boxing", description2: "Boxing 2 people fighting with eachother with gloves to see you is the superior fighter this fight usually lasts 12 rounds, 3 minutes each round.")
         let mma = Interests(name: "Mixed Martial Arts", description2: "MMA is the ultimate fighting sport because it includes all the fighting styles and is played between 2 people with fingerless gloves and last 3 rounds 3 to 5 minutes each round.")
-        intPool.append(swimming); intPool.append(football); intPool.append(videoGames); intPool.append(videoGames); intPool.append(racing)
-        intPool.append(computers); intPool.append(painting); intPool.append(wineTasting); intPool.append(reading); intPool.append(writing)
-        intPool.append(running); intPool.append(fishing); intPool.append(volunteer); intPool.append(music); intPool.append(dancing)
-        intPool.append(skiing); intPool.append(golf); intPool.append(boardGames); intPool.append(cooking); intPool.append(bowling)
-        intPool.append(handCrafting); intPool.append(magic); intPool.append(boxing); intPool.append(mma); intPool.append(basketball)
+        intPool.append(swimming);
+        intPool.append(football);
+        intPool.append(videoGames);
+        intPool.append(videoGames);
+        intPool.append(racing)
+        intPool.append(computers);
+        intPool.append(painting);
+        intPool.append(wineTasting);
+        intPool.append(reading);
+        intPool.append(writing)
+        intPool.append(running);
+        intPool.append(fishing);
+        intPool.append(volunteer);
+        intPool.append(music);
+        intPool.append(dancing)
+        intPool.append(skiing);
+        intPool.append(golf);
+        intPool.append(boardGames);
+        intPool.append(cooking);
+        intPool.append(bowling)
+        intPool.append(handCrafting);
+        intPool.append(magic);
+        intPool.append(boxing);
+        intPool.append(mma);
+        intPool.append(basketball)
         return intPool
     }
     // generating interest for each person
