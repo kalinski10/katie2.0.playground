@@ -35,8 +35,8 @@ public class Katie {
                                     p = 1
                                     n = 1
                                     j += 1
-                                    y = x.interests.count - 1 // exit small loop once fount a match
-                                    z = i.interests.count - 1 // exit big loop once fount a match
+                                    y = x.interests.count - 1 // exit small loop once found a match
+                                    z = i.interests.count - 1 // exit big loop once found a match
                                 }
                                 y += 1
                             }
